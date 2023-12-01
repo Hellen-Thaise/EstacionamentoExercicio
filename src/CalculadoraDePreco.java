@@ -8,13 +8,11 @@ public class CalculadoraDePreco {
             return BigDecimal.ZERO;
         }
 
-        BigDecimal valor = vaga.precoBase().multiply(BigDecimal.valueOf(horas));
-        System.out.printf("\nVeículo %s não é mensalista e precisa efetuar o pagamento de R$%s", veiculo.getIdentificacao(), valor, horas);
+        BigDecimal precoBase = vaga.precoBase();
+        BigDecimal valor = precoBase.multiply(BigDecimal.valueOf(horas));
+        System.out.printf("\nVeículo %s não é mensalista e precisa efetuar o pagamento de R$", veiculo.getIdentificacao(), valor, horas);
         return valor;
-//
-//        BigDecimal valor1 = vaga.precoBaseCoberto().multiply(BigDecimal.valueOf(horas));
-//        System.out.printf("Veículo %s não é mensalista e precisa efetuar o pagamento de R$%s", veiculo.getIdentificacao(), valor1, horas);
-//        return valor1;
+
     }
 }
 

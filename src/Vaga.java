@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class Vaga implements PrecoVaga {
+public abstract class Vaga {
 
     private final Integer numero;
     private Veiculo veiculo;
@@ -29,14 +29,9 @@ public class Vaga implements PrecoVaga {
 
     public void desocupar() {this.veiculo = null; }
 
-    @Override
-    public BigDecimal precoBase(){
-        return BigDecimal.valueOf(15.00);
-    }
 
-    @Override
-    public BigDecimal precoBaseCoberto() {
-        return null;
-    }
+    public abstract BigDecimal precoBase();
+
+
 
 }

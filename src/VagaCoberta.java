@@ -1,40 +1,14 @@
 import java.math.BigDecimal;
 
-    public class VagaCoberta {
-
-        private final Integer numero;
-        private Veiculo veiculo;
-
+    public class VagaCoberta extends Vaga {
 
 
         public VagaCoberta(Integer numero, Veiculo veiculo) {
-            this.numero = numero;
-            this.veiculo = veiculo;
+            super(numero, veiculo);
         }
 
-        public Integer getNumero() {
-            return numero;
+        @Override
+        public BigDecimal precoBase() {
+            return new BigDecimal(30.00);
         }
-
-        public Veiculo getVeiculo() {
-            return veiculo;
-        }
-
-        public void ocupar(Veiculo veiculo){
-            if (this.veiculo != null){
-                System.out.println("Já existe um veículo na vaga" + this.numero);
-                throw new IllegalStateException("Não é possível ocupar essa vaga");
-            }
-
-            this.veiculo = veiculo;
-        }
-
-        public void desocupar() {this.veiculo = null; }
-
-
-//        @Override
-//        public BigDecimal precoBaseCoberto() {
-//            return BigDecimal.valueOf(30.00);
-//        }
-
     }

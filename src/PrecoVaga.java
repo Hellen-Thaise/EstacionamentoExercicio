@@ -4,5 +4,5 @@ public interface PrecoVaga {
 
     BigDecimal precoBase();
 
-    BigDecimal precoBaseCoberto();
+
 }

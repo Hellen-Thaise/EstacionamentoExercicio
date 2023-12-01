@@ -1,4 +1,4 @@
-
+import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,8 +18,21 @@ public class Main {
         Veiculo Onix = new Veiculo("Chevrolet Onix", " HEL-1607 ", Plano.DIARIO);
         estacionamento.ocuparVaga(Onix);
 
+        Veiculo Ram = new Veiculo("Dodge Ram", " RAM-1607 ", Plano.MENSAL);
+        estacionamento.ocuparVaga(Ram);
+
+        Veiculo Tiggo = new Veiculo("Cherry Tiggo", " TIG-1607 ", Plano.MENSAL);
+        estacionamento.ocuparVaga(Tiggo);
+
         estacionamento.vagasOcupadas()
-                .forEach(vaga -> estacionamento.calcularPreco(vaga, vaga.getVeiculo(), 10));
+                .forEach(vaga -> {
+                   BigDecimal resultado = estacionamento.calcularPreco(vaga, vaga.getVeiculo(), 10);
+                    System.out.println(resultado);
+
+                        }
+
+
+                );
 
         }
 }
